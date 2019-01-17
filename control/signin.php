@@ -9,7 +9,7 @@ if(!($id and $passwordH)){
     die();
 }
 
-$connect = new mysqli('127.0.0.1', 'root','so621313','cannabis');
+$connect = new mysqli('13.59.174.126', 'root','1234','cannabis');
 if ($connect->connect_errno) {
     echo  "<script> history.back()</script>";
     die();

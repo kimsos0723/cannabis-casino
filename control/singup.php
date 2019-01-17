@@ -16,14 +16,15 @@ if($password !== $confirm){
 }
 unset($confirm);
 
-$connect = new mysqli('127.0.0.1','root','so621313','cannabis');
-$result = $connect->query("INSERT INTO Users VALUES('{$id}','{$password}','{$nickname}','{$email}','{$realName}',10000,1,1)");
+$connect = new mysqli('13.59.174.126', 'root','1234','cannabis');
+if ($connect->connect_errno) {
+    echo  "<script>alert('연결 실패');history.back()</script>";
+}
+$result = $connect->query("INSERT INTO Users(id,password,nickname,realname,email) VALUES('{$id}','{$password}','{$nickname}','{$realName}','{$email}')");
 $connect->close();
-
 if(!$result){
     echo  "<script>alert('이미 사용중인 ID 입니다.');history.back()</script>";
 }else{
     echo "<script> alert('회원가입에 성공했습니다');history.back()</script>";
-    $_SESSION['user'] = new User($username, $password, $nickname);
-    header("Location: ../login/login.php");
 }
+
