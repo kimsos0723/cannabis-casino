@@ -29,4 +29,5 @@ if($id === $data['id']){
     echo  "<script> alert('ID와 Password가 틀립니다..'); history.back()</script>";
     die();
 }
+echo  "<script> alert('로그인에 성공하셨습니다 !'); location.href=\" http://13.59.174.126:5000/\";</script>";
 
