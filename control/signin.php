@@ -20,7 +20,6 @@ if($id === $data['id']){
     if($passwordH === $data['password']){
         $Token = new Token(time()+60*60,5000, $data['nickname']);
         header("Authorization: {$Token->getToken()}");
-
     }else{
         echo  "<script> alert('ID와 Password가 틀립니다..'); history.back()</script>";
         die();
